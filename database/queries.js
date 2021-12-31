@@ -6,6 +6,13 @@ const queryAllCharacters = "SELECT characters.id, characters.name, characters.ra
     "LEFT JOIN locations ON locations.id = characters.location_id\n" +
     "LEFT JOIN elements ON elements.id = characters.element_id;"
 
+const queryCharacterAscencionMaterials = "SELECT character_ascension_requirements.id, character_ascension_requirements.level, characters.name AS character_name, items.name AS item_name, character_ascension_requirements.amount\n" +
+    "FROM character_ascension_requirements\n" +
+    "LEFT JOIN characters ON characters.id = character_ascension_requirements.character_id\n" +
+    "LEFT JOIN items ON items.id = character_ascension_requirements.item_id"
+
+
 module.exports = {
-    queryAllCharacters
+    queryAllCharacters,
+    queryCharacterAscencionMaterials
 }

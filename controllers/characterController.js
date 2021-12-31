@@ -1,11 +1,7 @@
-const {query} = require('../database/postGresSql')
+const {query} = require('../database/postgres')
 const {queryAllCharacters} = require('../database/queries')
-const getCharacter = async (req,res)=> {
-
-}
 
 const getAllCharacters = async (req,res) =>{
-    console.log(req.query)
     try {
         const results = await query(queryAllCharacters)
 
@@ -19,6 +15,5 @@ const getAllCharacters = async (req,res) =>{
 
 
 module.exports = {
-    getCharacter,
     getAllCharacters
 }
