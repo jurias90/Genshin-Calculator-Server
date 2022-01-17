@@ -5,6 +5,8 @@ const router = Router();
 
 router.get("/", getAllCharacters)
 
+router.post("/", getAllCharacters)
+
 router.use('/ascensions', require('./characterAscensionRoute'))
 
 router.all('/', async (req, res) =>

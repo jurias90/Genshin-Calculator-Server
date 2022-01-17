@@ -8,6 +8,8 @@ services:
       POSTGRES_USER: 4Tj6BvP9B4aqpwZ6kSWxjk
       POSTGRES_PASSWORD: aRyK7z4QaXhtS2bzUF3E3w
       PGDATA: /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     volumes:
     - db-data:/var/lib/postgresql/data
 
