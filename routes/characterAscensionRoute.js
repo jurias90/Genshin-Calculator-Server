@@ -3,7 +3,7 @@ const {getCharacterAscensionMaterials} = require("../controllers/characterAscens
 const router = Router();
 
 
-router.get('/', getCharacterAscensionMaterials)
+router.post('/', getCharacterAscensionMaterials)
 
 
 module.exports = router
