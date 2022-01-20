@@ -3,7 +3,6 @@ const {queryCharacterAscencionMaterials} = require('../database/queries')
 
 const getCharacterAscensionMaterials = async ( req,res)=>{
     try {
-        console.log(req.body)
         if(!req.body.ids){
             res.status(400).json({error:"Bad Request. ID's missing"})
         }
