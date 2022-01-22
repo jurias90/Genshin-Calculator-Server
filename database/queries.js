@@ -1,4 +1,4 @@
-const queryAllCharacters = "SELECT characters.id, characters.name, characters.rank, weapon_types.name AS weapon_type," +
+const allCharacters = "SELECT characters.id, characters.name, characters.rank, weapon_types.name AS weapon_type," +
     " genders.name AS gender, locations.name AS location, elements.name AS element, characters.\"avatarURL\" as" +
     " avatarURL\n" +
     "FROM characters\n" +
@@ -7,7 +7,7 @@ const queryAllCharacters = "SELECT characters.id, characters.name, characters.ra
     "LEFT JOIN locations ON locations.id = characters.location_id\n" +
     "LEFT JOIN elements ON elements.id = characters.element_id;"
 
-const queryCharacterAscencionMaterials = (values) =>  "SELECT character_ascension_requirements.id," +
+const characterAscencionMaterials = (values) =>  "SELECT character_ascension_requirements.id," +
     " character_ascension_requirements.level, characters.name AS character_name, items.name AS item_name, character_ascension_requirements.amount\n" +
     "FROM character_ascension_requirements\n" +
     "LEFT JOIN characters ON characters.id = character_ascension_requirements.character_id\n" +
@@ -16,6 +16,6 @@ const queryCharacterAscencionMaterials = (values) =>  "SELECT character_ascensio
 
 
 module.exports = {
-    queryAllCharacters,
-    queryCharacterAscencionMaterials
+    allCharacters,
+    characterAscencionMaterials
 }
