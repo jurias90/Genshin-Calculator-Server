@@ -1,3 +1,9 @@
+/**
+ * CharacterLibrary will sort all the data received from the database into an object organized for each character
+ * and levels.
+ * @param materials  Raw data from the database.
+ * @returns {{}} Object returned is a sorted library with all of the materials for each character and level,
+ */
 const characterLibrary = (materials) => {
     let library = {};
     let names = getUniqueField(materials, "character_name")
@@ -6,6 +12,13 @@ const characterLibrary = (materials) => {
     })
     return library
 }
+
+/**
+ * GetUniqueField creates an array of all the specific unique fields.
+ * @param {Array<Object>} materials
+ * @param {string} fieldName
+ * @returns {*[any]} array of given field name.
+ */
 
 const getUniqueField = (materials, fieldName) =>{
     let names = [];

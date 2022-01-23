@@ -1,6 +1,7 @@
 const {ascencionQuery} = require('../../database/postgres')
 const { characterLibrary } = require('../../utils/dataManager')
 
+
 const ascensionMaterials = async (req, res)=>{
     try {
         if(!req.body.ids || !req.body.ids.length > 0){
