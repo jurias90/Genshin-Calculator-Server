@@ -16,7 +16,10 @@ app.use(express.static('public'));
 app.use(cors());
 
 // ROUTES
-app.use('/characters', require('./routes/characterRoute'))
+app.use('/characters', require('./routes/character/characterRoute'))
+
+app.all('/', async (req, res) =>
+    res.status(404).json({error:"Route not found"}));
 
 
 // LISTENING
