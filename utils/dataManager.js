@@ -23,6 +23,7 @@ const getMaterialsForCharacter = (characterMats) =>{
     let materials = [];
 
     for(let i =1; i <= 6; i++){
+        // noinspection EqualityComparisonWithCoercionJS
         materials.push({
             level:i,
             materials: getMaterialsPerLevel(characterMats.filter(item=> item.level == i))
